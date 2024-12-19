@@ -108,13 +108,6 @@ print(f"Fitted Limb Darkening Parameters:\n a0 = {a0_fit}\n a1 = {a1_fit}\n a2 =
 def source_function(tau, a0, a1, a2):
     return a0 + a1 * tau + a2 * tau**2
 
-# Define the Planck function to compute temperature
-def planck_function(T, wavelength):
-    h = 6.62607015e-34  # Planck constant (Joule second)
-    c = 3.0e8  # Speed of light (m/s)
-    k = 1.380649e-23  # Boltzmann constant (Joule/Kelvin)
-    return (2 * h * c**2 / wavelength**5) / (np.exp(h * c / (wavelength * k * T)) - 1)
-
 # Calculate temperature from source function using the Planck function
 def temperature_from_source(S_lambda, wavelength):
     h = 6.62607015e-34  # Planck constant (Joule second)
